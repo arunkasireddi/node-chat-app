@@ -46,7 +46,7 @@ locationButton.on('click', function () {
         return alert('Geolocation not supported by browser');
     }
 
-    locationButton.attr('disabled', disabled);
+    locationButton.attr('disabled', 'disabled');
 
     navigator.geolocation.getCurrentPosition(function (position) {
         socket.emit('createLocationMessage', {
