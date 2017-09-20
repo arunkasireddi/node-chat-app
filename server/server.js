@@ -18,9 +18,18 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
+
+    socket.emit('newMessage', {
+        from: 'arun@example.com',
+        text: 'What up?',
+        createdAt: 123
+    });
+
+    socket.on('createMessage', (message) => {
+        console.log('Create message', message);
+    });
+
 });
-
-
 
 server.listen(port, () => {
     console.log(`Server running on port ${port}`);
