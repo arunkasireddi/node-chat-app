@@ -1,10 +1,3 @@
-// [{
-//     id: '123123131',
-//     name: 'Andrew',
-//     room: 'office fans'
-// }]
-
-
 // add user (id, name, room)
 // remove user(id)
 // getUser(id)
