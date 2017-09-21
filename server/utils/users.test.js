@@ -6,15 +6,15 @@ describe('Users', () => {
     beforeEach(() => {
         users = new Users();
         users.users = [{
-            id: 1,
+            id: '1',
             name: 'Arun',
             room: 'NodeJS'
         }, {
-            id: 2,
+            id: '2',
             name: 'Harika',
             room: 'NodeJS'
         }, {
-            id: 3,
+            id: '3',
             name: 'Master',
             room: 'ReactJS'
         }];
@@ -31,11 +31,32 @@ describe('Users', () => {
         expect(users.users).toEqual([user]);
     });
     it('should remove a user', () => {
+        var userId = '3';
+        var user = users.removeUser(userId);
 
+        expect(user.id).toBe(userId);
+        expect(users.users.length).toBe(2);
+    });
+    it('should not remove a user', () => {
+        var userId = '99';
+        var user = users.removeUser(userId);
+
+        expect(user).toNotExist();
+        expect(users.users.length).toBe(3);
     });
 
-    it('should return a user', () => {
+    it('should find a user', () => {
+        var userId = '2';
+        var user = users.getUser(userId);
 
+        expect(user.id).toBe(userId);
+    });
+
+    it('should not find a user', () => {
+        var userId = '99';
+        var user = users.getUser(userId);
+
+        expect(user).toNotExist();
     });
 
     it('should return names for NodeJS', () => {
