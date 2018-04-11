@@ -1,4 +1,4 @@
-# Node-Chat-Application (Room based)
+# Node-Chat-Application
 A chat app based on NodeJS, Express and Socket.io
 
 Clone the repository to your local machine folder using ```git clone```
